@@ -10,7 +10,7 @@
     $scope.lunchMessage = "";
     $scope.lunchList = "";
     $scope.lunchMessageColor = "";
-    $scope.borderStyle = "";
+    $scope.borderColor = "";
 
     $scope.checkLunch = function() {
       var lunchList = $scope.lunchList;
@@ -35,14 +35,16 @@
     }
 
     function generateMessage(arrayOfLunchItems) {
-      $scope.borderStyle = "solid";
       if(arrayOfLunchItems.length === 0) {
         $scope.lunchMessageColor = "red";
+        $scope.borderColor = "red";
         return "Please enter data first";
       } else if(arrayOfLunchItems.length > 3) {
+        $scope.borderColor = "green";
         $scope.lunchMessageColor = "green";
         return "Too much!";
       } else if(arrayOfLunchItems.length <= 3) {
+        $scope.borderColor = "green";
         $scope.lunchMessageColor = "green";
         return "Enjoy!";
       }
